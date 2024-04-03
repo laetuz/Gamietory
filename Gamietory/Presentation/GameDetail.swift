@@ -15,16 +15,22 @@ struct GameDetail: View {
             VStack {
                 AsyncImageComp(imageUrl: game.background_image ?? "", scale: 5)//.blur(radius: 20)
                 Text(game.name ?? "Loading").font(.title)
-                HStack {
-                    VStack(alignment: .leading) {
-                        var rating = String(game.rating ?? 0)
-                        var release = String(game.released ?? "")
-                        Text("Release date: \(release)")
-                        Text("Rating: \(rating)")
-                    }
+                VStack(alignment: .leading) {
+                    let rating = String(game.rating ?? 0)
+                    let release = String(game.released ?? "")
+                    Text("Release date: \(release)")
+                    Text("Rating: \(rating)")
                     Spacer()
+                    Divider()
+                    Text("More screenshots:")
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(game.shortScreenshots) { item in
+                                AsyncImageComp(imageUrl: item.image ?? "", scale: 10)
+                            }
+                        }
+                    }
                 }.padding()
-                Spacer()
             }
         }
         

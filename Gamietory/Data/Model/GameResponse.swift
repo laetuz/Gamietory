@@ -39,6 +39,8 @@ struct Results : Codable, Identifiable {
     let background_image : String?
     let rating : Double?
     let rating_top : Int?
+    let platforms: [Platforms]
+    let shortScreenshots: [ShortScreenshots]
  
     
     enum CodingKeys: String, CodingKey {
@@ -51,5 +53,57 @@ struct Results : Codable, Identifiable {
         case background_image = "background_image"
         case rating = "rating"
         case rating_top = "rating_top"
+        case platforms = "platforms"
+        case shortScreenshots = "short_screenshots"
+    }
+}
+
+struct Platforms: Codable {
+   // let platform : Platform?
+  //  let releasedAt : String?
+    let requirementsEn : Requirements_en?
+  //  let requirementsRu : String?
+
+    enum CodingKeys: String, CodingKey {
+
+      //  case platform = "platform"
+      //  case releasedAt = "released_at"
+        case requirementsEn = "requirements_en"
+     //   case requirementsRu = "requirements_ru"
+    }
+}
+
+struct Platform : Codable {
+    let id : Int?
+    let name : String?
+    let slug : String?
+
+    enum CodingKeys: String, CodingKey {
+
+        case id = "id"
+        case name = "name"
+        case slug = "slug"
+    }
+}
+
+struct Requirements_en : Codable {
+    let minimum : String?
+    let recommended : String?
+
+    enum CodingKeys: String, CodingKey {
+
+        case minimum = "minimum"
+        case recommended = "recommended"
+    }
+}
+
+struct ShortScreenshots : Codable, Identifiable {
+    let id : Int?
+    let image : String?
+
+    enum CodingKeys: String, CodingKey {
+
+        case id = "id"
+        case image = "image"
     }
 }
