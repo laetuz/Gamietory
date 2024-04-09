@@ -32,4 +32,18 @@ class GameViewModel: ObservableObject {
             }
         }
     }
+    
+    func fetchDetail() {
+        isLoading = true
+        gamesApi.gameDetail() { responses, error in
+            DispatchQueue.main.async {
+                self.isLoading = false
+                guard let detailResponse = responses else {
+                    self.errorMessage = "dfsdsfd"
+                    return
+                }
+                self.gameResponses = detailResponse
+            }
+        }
+    }
 }

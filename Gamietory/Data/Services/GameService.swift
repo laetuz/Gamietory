@@ -34,6 +34,29 @@ class GameService: ObservableObject {
         task.resume()
     }
     
+    func gameDetail(completion: @escaping (GameResponse?, Error?) -> Void) {
+//        var components = URLComponents(string: "https://api.rawg.io/api/games/{id}")
+        var components = URLComponents(string: "https://api.rawg.io/api/games/2")!
+        
+        components.queryItems = [URLQueryItem(name: "key", value: apiKey)]
+        
+        let request = URLRequest(url: components.url!)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let response = response as? HTTPURLResponse else {return}
+            
+            if let data = data {
+                if response.statusCode == 200 {
+                    self.decodeJson(from: data) { games, error in
+                        completion(games, error)
+                    }
+                    print("Data: \(data), status: \(response.statusCode)")
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
     func decodeJson(from data: Data, completion: @escaping (GameResponse?, Error?) -> Void) {
         let decoder = JSONDecoder()
       //  let result = try? decoder.decode(MovieResponses.self, from: data) as MovieResponses

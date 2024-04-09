@@ -32,28 +32,20 @@ struct GameResponse: Codable {
 // MARK: - Result
 struct Results : Codable, Identifiable {
     let id : Int?
-    let slug : String?
     let name : String?
     let released : String?
-    let tba : Bool?
     let background_image : String?
     let rating : Double?
-    let rating_top : Int?
-    let platforms: [Platforms]
     let shortScreenshots: [ShortScreenshots]
  
     
     enum CodingKeys: String, CodingKey {
         
         case id = "id"
-        case slug = "slug"
         case name = "name"
         case released = "released"
-        case tba = "tba"
         case background_image = "background_image"
         case rating = "rating"
-        case rating_top = "rating_top"
-        case platforms = "platforms"
         case shortScreenshots = "short_screenshots"
     }
 }

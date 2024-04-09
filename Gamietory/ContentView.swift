@@ -14,6 +14,8 @@ struct ContentView: View {
                 .tabItem { Label("Game", systemImage: "gamecontroller") }
             AboutPage()
                 .tabItem { Label("About", systemImage: "person") }
+            FavoriteView()
+                .tabItem { Label("Favorite", systemImage: "star") }
         }
     }
 }

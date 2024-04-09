@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		875387982BC41B02002BC481 /* Gamietory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 875387962BC41B02002BC481 /* Gamietory.xcdatamodeld */; };
+		8753879A2BC41D5D002BC481 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875387992BC41D5D002BC481 /* DataController.swift */; };
+		8753879C2BC428A8002BC481 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753879B2BC428A8002BC481 /* FavoriteView.swift */; };
+		8753879E2BC4D64B002BC481 /* DetailFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753879D2BC4D64B002BC481 /* DetailFavoriteView.swift */; };
 		87E7A1692BBD3573008B8FD6 /* GamietoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E7A1682BBD3573008B8FD6 /* GamietoryApp.swift */; };
 		87E7A16B2BBD3573008B8FD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E7A16A2BBD3573008B8FD6 /* ContentView.swift */; };
 		87E7A16D2BBD3574008B8FD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E7A16C2BBD3574008B8FD6 /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		875387972BC41B02002BC481 /* Gamietory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gamietory.xcdatamodel; sourceTree = "<group>"; };
+		875387992BC41D5D002BC481 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		8753879B2BC428A8002BC481 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		8753879D2BC4D64B002BC481 /* DetailFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFavoriteView.swift; sourceTree = "<group>"; };
 		87E7A1652BBD3573008B8FD6 /* Gamietory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gamietory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E7A1682BBD3573008B8FD6 /* GamietoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamietoryApp.swift; sourceTree = "<group>"; };
 		87E7A16A2BBD3573008B8FD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +79,7 @@
 				87E7A16A2BBD3573008B8FD6 /* ContentView.swift */,
 				87E7A16C2BBD3574008B8FD6 /* Assets.xcassets */,
 				87E7A16E2BBD3574008B8FD6 /* Preview Content */,
+				875387962BC41B02002BC481 /* Gamietory.xcdatamodeld */,
 			);
 			path = Gamietory;
 			sourceTree = "<group>";
@@ -91,6 +100,8 @@
 				87E7A1852BBD3D0B008B8FD6 /* GameViewModel.swift */,
 				87E7A1872BBD5013008B8FD6 /* GameDetail.swift */,
 				87E7A1892BBD5F8E008B8FD6 /* AboutPage.swift */,
+				8753879B2BC428A8002BC481 /* FavoriteView.swift */,
+				8753879D2BC4D64B002BC481 /* DetailFavoriteView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -100,6 +111,7 @@
 			children = (
 				87E7A1822BBD3B6B008B8FD6 /* Model */,
 				87E7A1782BBD38C1008B8FD6 /* Services */,
+				875387992BC41D5D002BC481 /* DataController.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -202,11 +214,15 @@
 				87E7A16B2BBD3573008B8FD6 /* ContentView.swift in Sources */,
 				87E7A18A2BBD5F8E008B8FD6 /* AboutPage.swift in Sources */,
 				87E7A17A2BBD38DE008B8FD6 /* GameList.swift in Sources */,
+				8753879C2BC428A8002BC481 /* FavoriteView.swift in Sources */,
 				87E7A1842BBD3B80008B8FD6 /* GameResponse.swift in Sources */,
+				8753879A2BC41D5D002BC481 /* DataController.swift in Sources */,
 				87E7A17F2BBD3975008B8FD6 /* GameService.swift in Sources */,
 				87E7A1692BBD3573008B8FD6 /* GamietoryApp.swift in Sources */,
 				87E7A17D2BBD3904008B8FD6 /* AsyncImageComp.swift in Sources */,
 				87E7A1862BBD3D0B008B8FD6 /* GameViewModel.swift in Sources */,
+				875387982BC41B02002BC481 /* Gamietory.xcdatamodeld in Sources */,
+				8753879E2BC4D64B002BC481 /* DetailFavoriteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +426,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		875387962BC41B02002BC481 /* Gamietory.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				875387972BC41B02002BC481 /* Gamietory.xcdatamodel */,
+			);
+			currentVersion = 875387972BC41B02002BC481 /* Gamietory.xcdatamodel */;
+			name = Gamietory.xcdatamodeld;
+			path = /Users/ryomartin/Documents/Developer/Gamietory/Gamietory/Gamietory.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 87E7A15D2BBD3573008B8FD6 /* Project object */;
 }
