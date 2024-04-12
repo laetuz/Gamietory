@@ -34,9 +34,9 @@ class GameService: ObservableObject {
         task.resume()
     }
     
-    func gameDetail(completion: @escaping (GameResponse?, Error?) -> Void) {
+    func gameDetail(id: Int64, completion: @escaping (GameDetailResponse?, Error?) -> Void) {
 //        var components = URLComponents(string: "https://api.rawg.io/api/games/{id}")
-        var components = URLComponents(string: "https://api.rawg.io/api/games/2")!
+        var components = URLComponents(string: "https://api.rawg.io/api/games/\(id)")!
         
         components.queryItems = [URLQueryItem(name: "key", value: apiKey)]
         
@@ -46,7 +46,7 @@ class GameService: ObservableObject {
             
             if let data = data {
                 if response.statusCode == 200 {
-                    self.decodeJson(from: data) { games, error in
+                    self.decodeDetailJson(from: data) { games, error in
                         completion(games, error)
                     }
                     print("Data: \(data), status: \(response.statusCode)")
@@ -64,6 +64,19 @@ class GameService: ObservableObject {
         if let games = try? decoder.decode(GameResponse.self, from: data) as GameResponse {
             print("Page: \(games.count)")
             print("result: \(games.results)")
+            completion(games, nil)
+        } else {
+            print("Cant decode json")
+        }
+    }
+    
+    func decodeDetailJson(from data: Data, completion: @escaping (GameDetailResponse?, Error?) -> Void) {
+        let decoder = JSONDecoder()
+      //  let result = try? decoder.decode(MovieResponses.self, from: data) as MovieResponses
+        
+        if let games = try? decoder.decode(GameDetailResponse.self, from: data) as GameDetailResponse {
+            print("Page: \(games.id)")
+            print("result: \(games.name)")
             completion(games, nil)
         } else {
             print("Cant decode json")
