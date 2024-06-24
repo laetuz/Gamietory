@@ -16,7 +16,7 @@ struct GameDetail: View {
     var body: some View {
         ScrollView {
             VStack {
-                AsyncImageComp(imageUrl: game.background_image ?? "", scale: 5)//.blur(radius: 20)
+                AsyncImageComp(imageUrl: game.backgroundImage ?? "", scale: 5)//.blur(radius: 20)
                 Text(game.name ?? "Loading").font(.title)
                 VStack(alignment: .leading) {
                     let rating = String(game.rating ?? 0)
@@ -34,7 +34,7 @@ struct GameDetail: View {
                                     save.id = Int64(game.id ?? 0)
                                     save.name = game.name
                                     save.released = game.released
-                                    save.background_image = game.background_image
+                                    save.background_image = game.backgroundImage
                                     save.rating = game.rating ?? 0
                                     save.isFavorited = true
                                     

@@ -8,14 +8,13 @@
 import Foundation
 
 struct GameResponse: Codable {
-    let count : Int?
-    let next : String?
-    let previous : String?
-    let results : [Results]?
-    let noindex : Bool?
-    let nofollow : Bool?
-    let description : String?
-   
+    let count: Int?
+    let next: String?
+    let previous: String?
+    let results: [Results]?
+    let noindex: Bool?
+    let nofollow: Bool?
+    let description: String?
 
     enum CodingKeys: String, CodingKey {
 
@@ -34,7 +33,7 @@ struct Results : Codable, Identifiable {
     let id : Int?
     let name : String?
     let released : String?
-    let background_image : String?
+    let backgroundImage : String?
     let rating : Double?
     let shortScreenshots: [ShortScreenshots]
  
@@ -44,7 +43,7 @@ struct Results : Codable, Identifiable {
         case id = "id"
         case name = "name"
         case released = "released"
-        case background_image = "background_image"
+        case backgroundImage = "background_image"
         case rating = "rating"
         case shortScreenshots = "short_screenshots"
     }
@@ -53,7 +52,7 @@ struct Results : Codable, Identifiable {
 struct Platforms: Codable {
    // let platform : Platform?
   //  let releasedAt : String?
-    let requirementsEn : Requirements_en?
+    let requirementsEn : RequirementsEn?
   //  let requirementsRu : String?
 
     enum CodingKeys: String, CodingKey {
@@ -78,7 +77,7 @@ struct Platform : Codable {
     }
 }
 
-struct Requirements_en : Codable {
+struct RequirementsEn: Codable {
     let minimum : String?
     let recommended : String?
 

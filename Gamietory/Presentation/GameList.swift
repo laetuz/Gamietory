@@ -23,7 +23,7 @@ struct GameList: View {
                                     VStack {
                                         HStack{
                                             Spacer()
-                                            AsyncImageComp(imageUrl: item.background_image ?? "", scale: 10, frameHeight: 100)
+                                            AsyncImageComp(imageUrl: item.backgroundImage ?? "", scale: 10, frameHeight: 100)
                                             Spacer()
                                         }.frame(height: 100)
                                         Text(item.name ?? "").background(.ultraThinMaterial)
