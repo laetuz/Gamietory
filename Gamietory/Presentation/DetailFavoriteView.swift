@@ -12,7 +12,7 @@ struct DetailFavoriteView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var bookmarkResult: FetchedResults<Bookmark>
     
-    @ObservedObject var viewModel = GameViewModel()
+    @ObservedObject var viewModel: GameViewModel
     let gamee: Bookmark
     
 

@@ -10,14 +10,15 @@ import SwiftUI
 struct FavoriteView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var games: FetchedResults<Bookmark>
-    
+    let gameViewModel = GameViewModel(useCase: Injection.init().provideGamesUseCase())
+
     var body: some View {
         NavigationView {
             List {
                 ForEach(games) { item in
-                    NavigationLink(destination: DetailFavoriteView(gamee: item)) {
+                    NavigationLink(destination: DetailFavoriteView(viewModel: gameViewModel, gamee: item)) {
                         VStack {
-                            HStack{
+                            HStack {
                                 Spacer()
                                 AsyncImageComp(imageUrl: item.background_image ?? "", scale: 10, frameHeight: 100)
                                 Spacer()

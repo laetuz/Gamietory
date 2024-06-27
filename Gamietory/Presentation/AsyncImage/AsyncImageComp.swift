@@ -29,7 +29,7 @@ struct AsyncImageComp: View {
         self.frameHeight = frameHeight
         self.bgColor = bgColor
     }
-    
+
     var body: some View {
         if imageUrl != nil {
             AsyncImage(url: URL(string: imageUrl ?? ""), scale: scale ?? 1) { image in

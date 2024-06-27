@@ -12,11 +12,11 @@ struct GameDetail: View {
     @FetchRequest(sortDescriptors: []) var bookmarkResult: FetchedResults<Bookmark>
 
     let game: Results
-    
+
     var body: some View {
         ScrollView {
             VStack {
-                AsyncImageComp(imageUrl: game.backgroundImage ?? "", scale: 5)//.blur(radius: 20)
+                AsyncImageComp(imageUrl: game.backgroundImage ?? "", scale: 5)
                 Text(game.name ?? "Loading").font(.title)
                 VStack(alignment: .leading) {
                     let rating = String(game.rating ?? 0)
@@ -37,7 +37,7 @@ struct GameDetail: View {
                                     save.background_image = game.backgroundImage
                                     save.rating = game.rating ?? 0
                                     save.isFavorited = true
-                                    
+
                                     try? moc.save()
                                 } else {
                                     if let existingBookmark = bookmarkResult.first(where: { $0.id == Int64(game.id ?? 0) }) {
@@ -53,7 +53,7 @@ struct GameDetail: View {
                             }
                         }
                     }
-                   
+
                     Spacer()
                     Divider()
                     Text("More screenshots:")
@@ -67,9 +67,8 @@ struct GameDetail: View {
                 }.padding()
             }
         }
-        
     }
-    
+
     func bookmarkExists(gameID: Int) -> Bool {
         return bookmarkResult.first(where: { $0.id == Int64(gameID) }) != nil
     }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameList: View {
-    @ObservedObject var viewModel = GameViewModel()
+    @ObservedObject var viewModel: GameViewModel
     
     var body: some View {
         NavigationView {
@@ -40,11 +40,12 @@ struct GameList: View {
                 }
             }.navigationTitle("Games List")
         }.onAppear(){
-            viewModel.fetchGames()
+            viewModel.fetchGamesFromUseCase()
+            //viewModel.fetchGames()
         }
     }
 }
 
-#Preview {
-    GameList()
-}
+//#Preview {
+//    GameList()
+//}

@@ -29,17 +29,17 @@ struct GameResponse: Codable {
 }
 
 // MARK: - Result
-struct Results : Codable, Identifiable {
-    let id : Int?
-    let name : String?
-    let released : String?
-    let backgroundImage : String?
-    let rating : Double?
+struct Results: Codable, Identifiable {
+    let id: Int?
+    let name: String?
+    let released: String?
+    let backgroundImage: String?
+    let rating: Double?
     let shortScreenshots: [ShortScreenshots]
- 
-    
+
+
     enum CodingKeys: String, CodingKey {
-        
+
         case id = "id"
         case name = "name"
         case released = "released"
@@ -52,7 +52,7 @@ struct Results : Codable, Identifiable {
 struct Platforms: Codable {
    // let platform : Platform?
   //  let releasedAt : String?
-    let requirementsEn : RequirementsEn?
+    let requirementsEn: RequirementsEn?
   //  let requirementsRu : String?
 
     enum CodingKeys: String, CodingKey {
@@ -64,10 +64,10 @@ struct Platforms: Codable {
     }
 }
 
-struct Platform : Codable {
-    let id : Int?
-    let name : String?
-    let slug : String?
+struct Platform: Codable {
+    let id: Int?
+    let name: String?
+    let slug: String?
 
     enum CodingKeys: String, CodingKey {
 
@@ -78,8 +78,8 @@ struct Platform : Codable {
 }
 
 struct RequirementsEn: Codable {
-    let minimum : String?
-    let recommended : String?
+    let minimum: String?
+    let recommended: String?
 
     enum CodingKeys: String, CodingKey {
 
@@ -88,9 +88,9 @@ struct RequirementsEn: Codable {
     }
 }
 
-struct ShortScreenshots : Codable, Identifiable {
-    let id : Int?
-    let image : String?
+struct ShortScreenshots: Codable, Identifiable {
+    let id: Int?
+    let image: String?
 
     enum CodingKeys: String, CodingKey {
 

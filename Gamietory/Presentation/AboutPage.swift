@@ -18,11 +18,11 @@ struct AboutPage: View {
                     Image(systemName: "mappin")
                     Text("Indonesia")
                 }
-                
+      
                 Spacer()
             }.navigationTitle("About me")
         }
-        
+
     }
 }
 
